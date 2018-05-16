@@ -1,0 +1,92 @@
+
+
+
+<div class='container'>
+<div class="row">
+<div class="col-4">
+
+  <h1>COURSE LIST</h1>
+  <ul  id="grouplist" class="list-group" >
+    <li *ngFor="let i of courseList;let y=index" (click)="batchshow(y)" [ngClass]="{'active': selectedIndex == y, 'list-group-item': true}" ><a >{{i.coursename}}</a></li>
+
+  </ul>
+  <!-- <div *ngFor="let i of courseList; let y = index">
+    <span>{{i.id}}</span> &nbsp;
+    <span >{{i.coursename}}</span>
+    
+  </div> -->
+  <form >
+    <div class="form-group">
+      <label for="Coursename">Coursename :</label>
+      <input type="Coursename" class="form-control" id="name" #name>
+    </div>
+    
+    <button  (click)="send(name.value)"class="btn btn-default">Submit</button>
+  </form>
+  </div>
+
+
+  <div class="col-4" *ngIf="show1">
+   
+<h2>LIST OF BATCHES OF {{CourseName}}</h2>
+
+
+<div *ngFor="let i of BatchList; let y = index">
+    <span>{{i.id}}</span> &nbsp;
+    <span >{{i.batchname}}</span>&nbsp;
+    <span><button (click)="viewLectures(y)">View Lectures</button></span>&nbsp;
+    <span><button (click)="viewStudents(y)">View Students</button></span>
+    
+  </div> 
+<br/>
+<h3>ADD BATCH</h3>
+  <form >
+    <div class="form-group">
+      <label for="Batchname">Batchname :</label>
+      <input type="text" class="form-control" id="name" #batchname>
+    </div>
+    
+    <button  (click)="postbatch(batchname.value)"class="btn btn-default">Submit</button>
+  </form>
+
+
+
+  </div >
+
+  <div *ngIf='showlectures' class ='col-4'>
+<h1>Lecture List</h1>
+    <ul  id="grouplist" class="list-group" >
+      <li *ngFor="let i of LectureList;let y=index" ><a >{{i.lecturename}}</a></li>
+  
+    </ul>
+    <h1>Add Lecture</h1>
+    <form >
+      <div class="form-group">
+        <label for="Lecturename">Lecturename:</label>
+        <input type="Coursename" class="form-control" id="name" #lecturename>
+      </div>
+      
+      <button  (click)="sendLecture(lecturename.value)"class="btn btn-default">Submit</button>
+    </form>
+    </div>
+  </div>
+<div *ngIf='showstudents' class='col-4'>
+
+  <h1>Student List</h1>
+  
+
+  <ul  id="grouplist" class="list-group" >
+    <li *ngFor="let i of StudentList;let y=index" ><a >{{i.studentname}}</a></li>
+
+  </ul>
+   <br/>
+  
+
+
+</div>
+
+
+
+</div>
+
+

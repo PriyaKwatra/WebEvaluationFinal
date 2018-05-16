@@ -1,0 +1,75 @@
+
+
+
+<h1>Student List</h1>
+<div   class=container>
+
+  <div class="row">
+
+    <div class="col-8">
+  
+      <div *ngFor="let i of StudentList; let y = index" >
+    
+        <span>{{i.id}}</span> &nbsp;
+        <span >{{i.studentname}}</span>
+        
+      </div>
+      <div>
+      <h1>Enroll new student</h1>
+      
+        <form >
+          <div class="form-group" >
+            <label for="Studentname">Studentname :</label>
+            <input type="Studentname" class="form-control" id="name" #name>
+          </div>
+          
+          <button  (click)="send(name.value)"class="btn btn-default">Submit</button>
+        </form>
+      
+      </div>
+      </div>
+  
+      <div class="col-4">
+  
+      <h2>Find student </h2>
+      <br/>
+      <label>enter id</label>
+      <input type="text" #studentid placeholder="enter student-id"/>
+       <button  (click)="findstudent(studentid.value)"class="btn btn-default">ok</button>
+       <label>{{studentname}}</label>
+     <div  *ngIf="show">
+  
+  
+      <select [(ngModel)]="batchId" >
+        <option *ngFor="let i of BatchList;let y=index"  [ngValue] = "i.id" >{{i.batchname}}</option>
+  
+        </select>
+        <button  (click)="sendBatchStudent()"class="btn btn-default">ok</button>
+  
+     </div>
+       
+       
+  
+  
+  
+  
+  
+  
+  
+  
+      </div>
+      
+      
+  
+  
+  
+    </div>
+  
+  
+  </div>
+  
+
+
+
+
+

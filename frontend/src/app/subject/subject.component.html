@@ -1,0 +1,41 @@
+
+
+
+<h1>Subject List</h1>
+<div *ngFor="let i of SubjectList; let y = index">
+  
+  <span>{{i.id}}</span> &nbsp;
+  <span >{{i.subjectname}}</span>
+  
+</div>
+
+<div>
+
+
+
+
+  <h3>Add new Subject</h3>
+
+  
+      <label >Subjectname :</label>
+      <input type="Subjectname"  id="name" #name/>
+<br/>
+<br/>
+
+    
+
+      <select [(ngModel)]="courseId">
+        <option *ngFor="let i of CourseList;let y=index"  [ngValue] = "i.id" >{{i.coursename}}</option>
+        </select> 
+
+    
+    
+    
+    <button  (click)="send(name.value)"class="btn btn-default">Submit</button>
+  
+
+
+
+
+</div>
+
